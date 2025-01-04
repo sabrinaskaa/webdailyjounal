@@ -131,48 +131,22 @@ include "koneksi.php";
       <div class="container">
         <span class="title-gallery">My Gallery<span class="dot">.</span></span>
         <div class="row mt-4">
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image1.jpg"
-              alt="Gallery Image 1"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image2.jpg"
-              alt="Gallery Image 2"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image3.jpg"
-              alt="Gallery Image 3"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image3.jpg"
-              alt="Gallery Image 4"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image1.jpg"
-              alt="Gallery Image 5"
-              class="img-fluid rounded"
-            />
-          </div>
-          <div class="col-md-4 mb-3">
-            <img
-              src="assets/images/image2.jpg"
-              alt="Gallery Image 6"
-              class="img-fluid rounded"
-            />
-          </div>
+        <?php
+          $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+          $hasil = $conn->query($sql); 
+
+          while($row = $hasil->fetch_assoc()){
+        ?>
+        <div class="col-md-4 mb-3">
+          <img
+            src="assets/images/<?= $row["gambar"]?>"
+            alt="Gallery Image 1"
+            class="img-fluid rounded"
+          />
+        </div>
+        <?php
+          }
+        ?> 
         </div>
       </div>
     </section>
