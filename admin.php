@@ -26,6 +26,7 @@ if (!isset($_SESSION['username'])) {
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous"
     /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         footer {
         width: 100%;
@@ -38,7 +39,7 @@ if (!isset($_SESSION['username'])) {
         flex-direction: column;
         }
 
-        nav {
+        .navbar.navbar-expand-sm.sticky-top {
             background-color: rgba(0, 34, 187, 0.2);
         }
 
@@ -56,6 +57,11 @@ if (!isset($_SESSION['username'])) {
 
         footer div a {
         cursor: pointer;
+        }
+
+        .full-view{
+            min-height: calc(100vh - 8.75rem);
+            height: 100%;
         }
     </style>
 </head>
@@ -100,7 +106,7 @@ if (!isset($_SESSION['username'])) {
     </nav>
     <!-- nav end -->
     <!-- content begin -->
-    <section id="content" class="p-5">
+    <section id="content" class="p-5 full-view">
         <div class="container">
             <?php
             if(isset($_GET['page'])){
@@ -119,7 +125,7 @@ if (!isset($_SESSION['username'])) {
     </section>
     <!-- content end -->
     <!-- footer begin -->
-    <footer class="text-center p-3 footer fixed-bottom">
+    <footer class="text-center p-3 footer">
     <div>
     <a href="https://www.instagram.com/udinusofficial">
         <i class="fs-4 bi bi-instagram h2 p-2 text-dark"></i>
