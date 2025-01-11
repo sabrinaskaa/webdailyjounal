@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
         }
 
         .navbar.navbar-expand-sm.sticky-top {
-            background-color: rgba(0, 34, 187, 0.2);
+            background-color: #CCD3F1;
         }
 
         footer img {
@@ -91,6 +91,9 @@ if (!isset($_SESSION['username'])) {
         </li>
         <li class="nav-item">
             <a class="nav-link" href="admin.php?page=gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="admin.php?page=user">User</a>
         </li> 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-indigo fw-bold" href="#" style="color: #520dc2;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
